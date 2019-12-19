@@ -29,6 +29,6 @@ public class TestObject
     @Override
     public String toString()
     {
-       return  "Test Object " + id + ":  " + text; 
+       return  "TestObject " + id + ":  " + text; 
     }
 }

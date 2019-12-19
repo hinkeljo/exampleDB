@@ -12,7 +12,7 @@ public class ExampleDB
             System.out.println(to.toString());
         }
         int maxID = getMaxID(list); 
-        TestObject newTO = new TestObject(++maxID, "Neues Objekt Nummer " + maxID);
+        TestObject newTO = new TestObject(++maxID, "NEU" + maxID);
         DBManager.insertData(newTO);
         DBManager.deleteData(newTO);
         System.out.println("[Log] Finished.");
