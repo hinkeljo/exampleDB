@@ -16,7 +16,7 @@ Das Programm zeigt wie man eine Verbdinung zu einer SQLite Datenbank herstellt u
 
 <p float = "center">
   <img src="https://github.com/asder0815/exampleDB/blob/master/ExampleDB/images/project_properties.png" > 
-  <img src="https://github.com/asder0815/exampleDB/blob/master/ExampleDB/images/add_library.png" width = "550">
+  <img src="https://github.com/asder0815/exampleDB/blob/master/ExampleDB/images/add_library.png" >
 </p>
 
 * Zur Einfachheit einen [Programm zum verwalten von SQLite Datenbanken](https://sqlitebrowser.org/dl/) herunterladen
