@@ -19,7 +19,6 @@ Das Programm zeigt wie man eine Verbdinung zu einer SQLite Datenbank herstellt u
 *  Netbeans in euren Project-Properties (Rechtsklick auf das Project -> Properties), unter "Libraries" den Treiber zum Classpath hinzufügen
 
 <p float = "center">
-  <img src="ExampleDB/images/project_properties.png" >
   <img src="ExampleDB/images/add_library.png" >
 </p>
 
