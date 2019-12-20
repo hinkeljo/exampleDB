@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class DBManager 
 {
-    //Der Pfad zur Datenbank, ausgehend von euren Projektordner
+    //Der relative Pfad zur Datenbank, ausgehend von euren Projektordner
     private static final String DB_FILENAME = "exampleDB.db";
     private static final String DB_PATH = "database/" + DB_FILENAME;
     
