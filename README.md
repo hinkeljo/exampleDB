@@ -14,7 +14,7 @@ All of this is done without the JPA as this doesn't fit the scope of this lectur
 * Place the .jar file in your project (e.g. in a new folder)
 
 <p float = "center">
-  <img src="ExampleDB/images/folder_hierarchy.png">
+  <img src="ExampleDB/images/folder_hierarchy.PNG">
 </p>
 
 * In Netbeans, right-click on your project and select "Properties"
