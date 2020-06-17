@@ -5,11 +5,14 @@ import java.util.ArrayList;
 
 public class DBManager 
 {
-    //Der relative Pfad zur Datenbank, ausgehend von euren Projektordner
+    //relative path to the database, starting at your project folder
     private static final String DB_FILENAME = "exampleDB.db";
     private static final String DB_PATH = "database/" + DB_FILENAME;
     
-   //Erstellt eine Verdinung zur Datenbank, welche für die Abfragen später benötigt wird.
+    /**
+     * creates a connection to the database, which is required for queries
+     * @return database connection 
+     */
     private static Connection connect() 
     {
         String url = "jdbc:sqlite:" + DB_PATH;
@@ -25,7 +28,10 @@ public class DBManager
         return connection;
     }
     
-    //Rufe die gesamte Tabelle "Test" ab und erstellt eine ArrayList mit TestObjects
+    /**
+     * Gets all data from the table "test" and creates an ArrayList with test objects
+     * @return ArrayList of test objects from the database
+     */
     public static ArrayList<TestObject> getData()
     {
         ArrayList<TestObject> list = new ArrayList<>();
@@ -34,8 +40,8 @@ public class DBManager
         {
             ResultSet resultSet = pstmt.executeQuery();
             
-            //Iteriert durch das gesamte Ergebnis der Abfrage 
-            //und ertellt für jede Zeile ein neues Testobjekt
+            //iterates through the entire result of the query 
+            //and creates a new object for each row
             while (resultSet.next()) 
             {
                 int id = resultSet.getInt("ID"); 
@@ -52,19 +58,23 @@ public class DBManager
         return list;
     }
     
+    /**
+     * Inserts the specified TestObject into the database
+     * @param to TestObject to be saved in the database
+     */
     public static void insertData(TestObject to) 
     {
-        //SQL statement wird vorbereitet, noch mit variablen Werten
-        //die beiden Fragezeichen entspechen hier den Werten für ID und Text
+        //SQL query is prepared with not fixed values
+        //The question marks (?) will be replaced by the actual values for the ID and the text
         String sql = "INSERT INTO test(ID,Text) VALUES(?,?)";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) 
         {
-            //füllt das SQL statement mit den Werten des TestObjects, welches übergeben wurde
-            //erstes Fragezeichen wird mit der ID  des übergebenen TestObjects gefüllt
+            //fills the sql statement with the values of the TestObject that was given in the parameters
+            //first question mark is replaced with the ID
             pstmt.setInt(1, to.getId());
-            //zweites Fragezeichen wird mit dem Text des übergebenen TestObjects gefüllt
+            //second question mark is replaced with the text
             pstmt.setString(2, to.getText());
-            //Nun vollständigers SQL statement wird jetzt ausgeführt
+            //now completed sql statement is executed
             pstmt.executeUpdate();
             System.out.println("[Log] " + to + " added into database.");
             conn.close();
@@ -75,14 +85,18 @@ public class DBManager
         }
     }
     
+    /**
+     * Deletes the specified TestObject from the database
+     * @param to Object to be deleted
+     */
     public static void deleteData(TestObject to) 
     {
-        //SQL statement wird vorbereitet, noch mit variablen Werten
+        //SQL query is prepared with not fixed values
         String sql = "DELETE FROM Test WHERE ID = ?";
         try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) 
         {
-            //füllt das SQL statement mit den Werten des TestObjektes, welches übergeben wurde
-            //Fragezeichen wird mit der ID gefüllt
+            //fills the sql statement with the values of the TestObject that was given in the parameters
+            //question mark is replaced with the ID
             pstmt.setInt(1, to.getId());
             pstmt.executeUpdate();
             System.out.println("[Log] " + to + " removed from database.");

@@ -1,38 +1,37 @@
 # exampleDB
-Für die Programmieren Vorlesung.
+For the Programming Lecture 
 
-Das Programm zeigt wie man eine Verbdinung zu einer SQLite Datenbank herstellt und die Einträge daraus auslesen oder löschen und neue Einträge anlegen kann.
+This programm shows how to establish a connection to an SQLite database and how the read it's data and insert new or delete existing data.
+All of this is done without the JPA as this doesn't fit the scope of this lecture and will maybe be discussed in a lecture in the following semester. 
 
-## Anleitung für eine SQLite Datenbank in Java
-* [jdbc Treiber](https://bitbucket.org/xerial/sqlite-jdbc/downloads/) herunterladen (https://bitbucket.org/xerial/sqlite-jdbc/downloads/)
+## Tutorial for an SQLite Database
+* [jdbc driver](https://bitbucket.org/xerial/sqlite-jdbc/downloads/) download (https://bitbucket.org/xerial/sqlite-jdbc/downloads/)
 
 <p float = "center">
   <img src="ExampleDB/images/jdbc_download.PNG" >
 </p>
 
-* Die .jar Datei in euer Projekt legen (z.B in einen neuen Unterorder)
+* Place the .jar file in your project (e.g. in a new folder)
 
 <p float = "center">
   <img src="ExampleDB/images/folder_hierarchy.png">
 </p>
 
-*  Netbeans in euren Project-Properties (Rechtsklick auf das Project -> Properties), unter "Libraries" den Treiber zum Classpath hinzufügen
+* In Netbeans, right-click on your project and select "Properties"
+* In the menu "Libraries", add the downloaded driver to your classpath like shown in the picture
 
 <p float = "center">
   <img src="ExampleDB/images/add_library.png" >
 </p>
 
-* Zur Einfachheit ein [Programm zum verwalten von SQLite Datenbanken](https://sqlitebrowser.org/dl/) herunterladen (https://sqlitebrowser.org/dl/)
-* Darüber eine neue SQLite Datenbank anlegen (auch in eurem Projektordner) mit Tabellen wie ihr sie eben braucht
-* Dann könnt ihr die Datenbank auch schon in Java verwenden, hierzu sollte das Code-Beispiel helfen
+* For simplicity, download [a programm to manage SQLite databases](https://sqlitebrowser.org/dl/) (https://sqlitebrowser.org/dl/)
+* In this programm, create a new SQLite databse in your project (can be a new sub-folder again) with tables according to your needs
+* Have a look at the code example in this repository to learn how to use the databse in Java
 
-## Alternativ:
-* Dieses Projet kopieren (Rechsklick in Netbeans auf das Projekt -> Copy), alle Klassen außer dem DBManager löschen und mit euren Klassen ersetzen
-* Die Datenbank mit Hilfe des oben genannten Programms anpassen und natürlich auch den DBMAnager an eure Klassen und Daten anpassen
-
-## Datenbank Beispiel von Mustafa Rasheed
-* https://lms.hs-pforzheim.de/mod/forum/discuss.php?d=19522
-* https://lms.hs-pforzheim.de/mod/forum/discuss.php?d=19561
+## Alternatively:
+* Copy this project (In Netbeans, right-click -> Copy)
+* delete all classes except the DBManager class and replace them with your classes
+* Adjust the database (with the SQLite Browser) and the DBManager to your classes and data
 
 ## Zusätzliche Resourcen:
 * https://www.sqlitetutorial.net/sqlite-java/select/
