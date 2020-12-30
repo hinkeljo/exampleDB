@@ -5,7 +5,7 @@ This programm shows how to establish a connection to an SQLite database and how 
 All of this is done without the JPA as this doesn't fit the scope of this lecture and will maybe be discussed in a lecture in the following semester. 
 
 ## Tutorial for an SQLite Database
-* [jdbc driver](https://bitbucket.org/xerial/sqlite-jdbc/downloads/) download (https://bitbucket.org/xerial/sqlite-jdbc/downloads/)
+* [jdbc driver](https://github.com/xerial/sqlite-jdbc/releases/) download (https://github.com/xerial/sqlite-jdbc/releases/)
 
 <p float = "center">
   <img src="ExampleDB/images/jdbc_download.PNG" >
