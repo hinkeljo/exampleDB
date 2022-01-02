@@ -1,6 +1,7 @@
 package exampledb;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ExampleDB 
 {    
@@ -18,7 +19,7 @@ public class ExampleDB
         
         DBManager.insertData(newTO);
         DBManager.deleteData(newTO);
-        DBManager.updateData(1, "Updated Text");
+        DBManager.updateData(1, randomString());
         System.out.println("[Log] Finished.");
     }
     
@@ -30,5 +31,17 @@ public class ExampleDB
             if(to.getId() > i) i = to.getId(); 
         }
         return i; 
+    }
+    
+    /**
+     * Creates a random alphanumeric string with 10 characters
+     * @return Generated string
+     */
+    private static String randomString() {
+        return new Random().ints(48, 122 + 1)
+            .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+            .limit(10)
+            .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+            .toString();
     }
 }

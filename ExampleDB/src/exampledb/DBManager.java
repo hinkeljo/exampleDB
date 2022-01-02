@@ -119,7 +119,7 @@ public class DBManager
             //second question mark is replaced with the ID
             pstmt.setInt(2, index);
             pstmt.executeUpdate();
-            System.out.println("[Log] Item: " + index + " updated with text" + text + ".");
+            System.out.println("[Log] Item: " + index + " updated with text: " + text + ".");
             conn.close();
         } 
         catch (SQLException e) 
