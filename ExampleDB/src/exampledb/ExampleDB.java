@@ -18,6 +18,7 @@ public class ExampleDB
         
         DBManager.insertData(newTO);
         DBManager.deleteData(newTO);
+        DBManager.updateData(1, "Updated Text");
         System.out.println("[Log] Finished.");
     }
     

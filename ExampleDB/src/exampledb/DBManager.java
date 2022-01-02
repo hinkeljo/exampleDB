@@ -107,4 +107,24 @@ public class DBManager
             System.out.println(e.getMessage());
         }
     }
+    
+    public static void updateData(int index, String text) {
+        //SQL query is prepared with not fixed values
+        String sql = "UPDATE Test SET Text = ? WHERE ID = ?";
+        try (Connection conn = connect(); PreparedStatement pstmt = conn.prepareStatement(sql)) 
+        {
+            //fills the sql statement with the values of the TestObject that was given in the parameters
+            //first question mark is replaced with the text
+            pstmt.setString(1, text);
+            //second question mark is replaced with the ID
+            pstmt.setInt(2, index);
+            pstmt.executeUpdate();
+            System.out.println("[Log] Item: " + index + " updated with text" + text + ".");
+            conn.close();
+        } 
+        catch (SQLException e) 
+        {
+            System.out.println(e.getMessage());
+        }
+    }
 }
